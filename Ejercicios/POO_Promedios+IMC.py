@@ -1,8 +1,8 @@
 class PERSONA:
 
-    def __init__(self, nombre, genero, altura, peso, edad):
+    def __init__(self, nombre, edad, genero, altura, peso):
         self.nombre = nombre
-        self.edad = edad
+        self.edad = int(edad)
         self.genero = genero
         self.altura = float(altura)
         self.peso = float(peso)
@@ -19,8 +19,13 @@ class PERSONA:
             rango = "sobrepeso"
         else:
             rango = "obesidad"
+            
+        return imc, rango
         
-        print(f"El índice de masa corporal de {self.nombre} es {IMC} - {rango}")
+        
+        def mostrar(self):
+            imc, rango = self.calcular_imc()
+            print(f"El índice de masa corporal de {self.nombre} es {IMC} - {rango}")
 
 
     def Promedio_Asignatura(self, n1, n2, n3):
@@ -33,7 +38,5 @@ class PERSONA:
             print(f"{self.nombre} no aprobó asignatura con un Promedio de: {promedio}:")
 
 estudiante1 = PERSONA("Camilo", "Hombre", 1.80, 95, 19)
-
 estudiante1.Calcular_IMC()
-
 estudiante1.Promedio_Asignatura(3.8, 4.2, 4.5)
